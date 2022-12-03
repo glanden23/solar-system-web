@@ -154,14 +154,14 @@ window.addEventListener(
 )
 
 const camDir = new THREE.Vector3()
-var distance = 20
+var distance = 10
 var target = earthDay
 
 //Allow for size change without breaking orbiting.
 addEventListener('wheel', (event) => {
   if (event.deltaY > 0) {
     distance+=5
-  }else if(event.deltaY < 0) {
+  }else if(event.deltaY < 0 && distance > 5) {
     distance-=5
   }
 });
